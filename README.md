@@ -12,7 +12,7 @@ Watch out for the flying pixies!
 pip install pixies
 ```
 
-Download [Chrome Webdriver binariy](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/), and add it to the System PATH.
+Download [Chrome Webdriver binary](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/), and add it to the System PATH.
 
 ```python
 import pixies

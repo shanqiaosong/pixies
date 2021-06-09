@@ -9,10 +9,27 @@ Watch out for the flying pixies!
 #### Quick start
 
 ```bash
-pip install pixies
+$ pip install pixies
 ```
 
 Download [Chrome Webdriver binary](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/), and add it to the System PATH.
+
+Make sure when entering ```chromedriver``` in the terminal, the following prompt appears:
+
+```bash
+$ ChromeDriver was started successfully.
+```
+
+Use pixies in python:
+
+```python
+import pixies
+
+cage = pixies.Cage('https://news.baidu.com')
+cage.release()
+```
+
+If you'd like to specify the species (which have different behavior) of pixies:
 
 ```python
 import pixies

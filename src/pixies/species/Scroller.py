@@ -1,4 +1,5 @@
 import random
+from ..helper.log import logPixie
 
 
 class Scroller:
@@ -8,7 +9,9 @@ class Scroller:
 
     def run(self):
         driver = self.driver
-        driver.execute_script(
+        x = random.random()
+        y = random.random()
+        result = driver.execute_script(
             """
             window.scrollTo(
                 {
@@ -17,8 +20,15 @@ class Scroller:
                     behavior: "smooth"
                 }
             )
+            return [
+                document.body.scrollHeight * arguments[0],
+                document.body.scrollWidth * arguments[1]
+            ]
             """,
-            random.random(),
-            random.random()
+            x,
+            y
         )
         self.page.indicateControl()
+        logPixie(
+            'Scroller', f'Scrolled to position ' +
+            f'({int(result[0])},{int(result[1])})')
